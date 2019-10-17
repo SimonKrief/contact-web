@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import fr.gtm.demo.ContactServices;
 import fr.gtm.demo.entities.Contact;
 
-@WebServlet("/ContactServlet")
-public class ContactServlet extends HttpServlet {
+@WebServlet("/ContactDeleteServlet")
+public class ContactDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ContactServlet() {
+	public ContactDeleteServlet() {
 		super();
 	}
 
@@ -27,6 +27,8 @@ public class ContactServlet extends HttpServlet {
 //		String cp =request.getParameter("cp");
 
 		String page = "";
+ 		String id = request.getParameter("id");  		
+ 		service.deleteContactById(id);
  		
 		List<Contact> contacts = service.getAllContacts();
 		request.setAttribute("contacts", contacts);

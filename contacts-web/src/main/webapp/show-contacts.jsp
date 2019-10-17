@@ -12,7 +12,14 @@
 	<table>
 		<c:forEach items="${contacts }" var="contact">
 			<tr>
-				<td>${contact.nom }</td>
+				<td>${contact.nom }
+					${contact.id }
+				
+<%-- 				 <button href="ContactDeleteServlet?id=${contact.id }"  >Supprimer</button> --%>
+					 <a href="ContactDeleteServlet?id=${contact.id }"  >Supprimer</a>
+	
+	
+				 </td>
 			</tr>
 		</c:forEach>
 	</table>

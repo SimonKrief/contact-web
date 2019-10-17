@@ -37,6 +37,9 @@ public class ContactDAO {
 		return contact;
 	}
 	
+
+	
+	
 	public void delete(Contact contact) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
@@ -47,6 +50,20 @@ public class ContactDAO {
 		em.getTransaction().commit();
 		em.close();
 	}
+	
+	public void deleteContactById(String id) {
+		long identifiant = Long.parseLong(id);
+		Contact contact = getContactById(identifiant);
+		this.delete(contact);
+	}
+	
+//	public void deleteContactById(int id) {
+//	Contact contact = getContactById(id);
+//	this.delete(contact);
+//}
+	
+	
+	
 	
 	public void update(Contact contact) {
 		EntityManager em = emf.createEntityManager();
