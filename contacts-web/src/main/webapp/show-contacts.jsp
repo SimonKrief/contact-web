@@ -12,7 +12,7 @@
 	<table>
 		<c:forEach items="${contacts }" var="contact">
 			<tr>
-				<td>${contact }</td>
+				<td>${contact.nom }</td>
 			</tr>
 		</c:forEach>
 	</table>

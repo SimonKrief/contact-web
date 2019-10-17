@@ -25,7 +25,7 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name = "Contact.getByNom",query = "SELECT c FROM Contact c WHERE c.nom LIKE :nom"),
 	@NamedQuery(name = "Contact.getWithAddress",query="SELECT c FROM Contact c WHERE c.adresses != null"),
-	@NamedQuery(name = "Contact.getAll",query="SELECT c.nom FROM Contact c")
+	@NamedQuery(name = "Contact.getAll",query="SELECT c FROM Contact c")
 })
 public class Contact implements Serializable {
 	@Id	

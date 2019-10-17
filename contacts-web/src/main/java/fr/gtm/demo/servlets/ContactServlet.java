@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.gtm.demo.ContactServices;
+import fr.gtm.demo.entities.Contact;
 
 @WebServlet("/ContactServlet")
 public class ContactServlet extends HttpServlet {
@@ -27,7 +28,7 @@ public class ContactServlet extends HttpServlet {
 
 		String page = "";
 
-		List<String> contacts = service.getAllContacts();
+		List<Contact> contacts = service.getAllContacts();
 		request.setAttribute("contacts", contacts);
 		page = "/show-contacts.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(page);

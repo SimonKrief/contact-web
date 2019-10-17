@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.EntityManagerFactory;
 
 import fr.gtm.demo.dao.ContactDAO;
+import fr.gtm.demo.entities.Contact;
 
 
 
@@ -14,7 +15,7 @@ public class ContactServices {
 		dao= new ContactDAO(emf);
 	}
 	
-	public List<String> getAllContacts(){
+	public List<Contact> getAllContacts(){
 		return dao.getAllContacts();
 	}
 

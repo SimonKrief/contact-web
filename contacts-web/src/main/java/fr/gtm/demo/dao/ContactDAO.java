@@ -83,13 +83,13 @@ public class ContactDAO {
 		return contacts;
 	}
 	
-	public List<String> getAllContacts() {
+	public List<Contact> getAllContacts() {
 		return getListString("Contact.getAll");
 	}
 
-	private List<String> getListString(String namedQuery) {
+	private List<Contact> getListString(String namedQuery) {
 		EntityManager em = emf.createEntityManager();
-		List<String> liste = em.createNamedQuery(namedQuery, String.class).getResultList();
+		List<Contact> liste = em.createNamedQuery(namedQuery,Contact.class).getResultList();
 		em.close();
 		return liste;
 	}
