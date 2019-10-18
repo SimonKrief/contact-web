@@ -25,4 +25,8 @@ public class ContactServices {
 	public void deleteContact(Contact contact) {
 		dao.delete(contact);
 	}
+	
+	public void create(Contact contact) {
+		dao.create(contact);
+	}
 }

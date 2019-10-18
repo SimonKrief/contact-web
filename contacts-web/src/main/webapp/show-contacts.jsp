@@ -17,6 +17,7 @@
 				
 <%-- 				 <button href="ContactDeleteServlet?id=${contact.id }"  >Supprimer</button> --%>
 					 <a href="ContactDeleteServlet?id=${contact.id }"  >Supprimer</a>
+<%-- 					 <a href="UpdateServlet?id=${contact.id }"  >Supprimer</a> --%>
 	
 	
 				 </td>
