@@ -22,11 +22,28 @@ public class ContactServices {
 		
 	}
 	
-	public void deleteContact(Contact contact) {
-		dao.delete(contact);
-	}
+//	public void deleteContact(Contact contact) {
+//		dao.delete(contact);
+//	}
 	
 	public void create(Contact contact) {
 		dao.create(contact);
 	}
+	
+
+	
+//	public void updateContactById(String id) {
+//		dao.updateContactById(id);
+//	}
+	
+	public Contact getContactById(String id) {
+		long identifiant = Long.parseLong(id);
+		return dao.getContactById(identifiant);
+	}
+	
+	public void update(Contact contact) {
+	dao.update(contact);
+}
+	
+	
 }

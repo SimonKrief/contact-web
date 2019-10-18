@@ -57,10 +57,13 @@ public class ContactDAO {
 		this.delete(contact);
 	}
 	
-//	public void deleteContactById(int id) {
-//	Contact contact = getContactById(id);
-//	this.delete(contact);
-//}
+//	public void updateContactById(String id) {
+//		long identifiant = Long.parseLong(id);
+//		Contact contact = getContactById(identifiant);
+//		this.update(contact);
+//	}
+	
+	
 	
 	
 	

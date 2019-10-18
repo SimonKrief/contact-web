@@ -16,8 +16,8 @@ import fr.gtm.demo.ContactServices;
 /**
  * Servlet implementation class AjouterContactServlet
  */
-@WebServlet("/AddContactServlet")
-public class AddContactServlet extends HttpServlet {
+@WebServlet("/UpdateContactServlet")
+public class UpdateContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -28,16 +28,18 @@ public class AddContactServlet extends HttpServlet {
 		String civilite = request.getParameter("civilite");
 		String nom = request.getParameter("nom");
 		String prenom = request.getParameter("prenom");
+		//obtenu dans l'uri:
+ 		String id = request.getParameter("id");  		
 
 		
 		if(civilite==null || civilite.isEmpty() || nom==null || nom.isEmpty() || prenom==null || prenom.isEmpty()) {
 			page = "/ContactServlet";
 		} else {
-			Contact contact = new Contact();
+			Contact contact = service.getContactById(id);
 			contact.setCivilite(Civilite.valueOf(civilite));
 			contact.setNom(nom);
 			contact.setPrenom(prenom);
-			service.create(contact);
+			service.update(contact);
 			page = "/ContactServlet";
 		}
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(page);

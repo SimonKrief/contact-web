@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="StyleSheet" type="text/css" href="css/style2.css">
+<title>Ajout de contact</title>
+<!-- <link rel="StyleSheet" type="text/css" href="css/style2.css"> -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 </head>
 <body>
 	<form action="AddContactServlet" method="get">
@@ -27,7 +31,8 @@
 				type="text" placeholder="Votre nom" />
 		</div>
 		<div>
-			<input type="submit" value="Creer un contact" href="ContextServlet" />
+			<input type="submit" value="Creer un contact"
+				href="AddContextServlet" />
 		</div>
 	</form>
 	<div>
@@ -35,3 +40,4 @@
 	</div>
 </body>
 </html>
+
