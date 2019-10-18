@@ -1,0 +1,23 @@
+<!--  ATTENTION
+		Ce fichier n'est pris en compte que si le déploiement est effectué
+		dans le répertoire de déploiement à chaud de Tomcat.
+		Si ce n'est pas le cas il faut que le contenu du fichier
+		
+			%TOMCAT_HOME%/conf/Catalina/localhost/monAppli.xml
+			
+		reprenne les éléments contenus dans <Context>...</Context>
+-->
+<Context reloadable="true">
+	<Resource
+		name='jdbc/contacts'
+		auth='Container' 
+		type='javax.sql.DataSource'
+		driverClassName='com.mysql.jdbc.Driver'
+		url='jdbc:mysql://localhost:3306/contacts?serverTimezone=UTC'
+		username='root'
+		password='P@ssw0rd'
+		maxActive='20'
+		maxIdle='10'
+		maxWait='600000'
+		removeAbandoned='true' />
+</Context>
