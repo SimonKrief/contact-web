@@ -24,8 +24,8 @@ public class ContactServlet extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ContactServices service=(ContactServices) getServletContext().getAttribute(Constantes.CONTACT_SERVICE);
-		Writer out =response.getWriter();
-		String cp=request.getParameter("cp");
+//		Writer out =response.getWriter();
+//		String cp=request.getParameter("cp");
 		String page;
 		List<Contact> contacts=service.getContacts();
 		request.setAttribute("contacts", contacts);

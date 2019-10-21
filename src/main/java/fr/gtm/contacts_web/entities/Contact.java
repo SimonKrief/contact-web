@@ -45,6 +45,8 @@ public class Contact implements Serializable {
 	private String nom;
 	@Column(name="prenom")
 	private String prenom;
+	@Column(name = "image")
+	private String image;
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER,orphanRemoval = true)
 	@JoinTable(name="contacts_adresses",
 	joinColumns = @JoinColumn(name="fk_personne"),
@@ -52,6 +54,14 @@ public class Contact implements Serializable {
 	private List<Adresse> adresses=new ArrayList<>();
 
 	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	public Contact() {}
 	
 	public Contact(Civilite civilite, String nom, String prenom) {

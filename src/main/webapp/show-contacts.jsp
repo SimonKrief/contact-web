@@ -9,11 +9,11 @@
 </head>
 <body>
 	<form action="CreerContactServlet" method="get">
-		<h1>Nouveau contact:</h1><br> 
-		Civilité: <input name="civilite" id="civilite">
+		<h1>Nouveau contact:</h1>
+		<br> Civilité: <input name="civilite" id="civilite">
 		<!-- mettre des select pr sélectionner la civilite parmi une liste prédéfinie-->
-		Prénom: <input name="prenom" id="prenom"> 
-		Nom: <input name="nom" id="nom">
+		Prénom: <input name="prenom" id="prenom"> Nom: <input
+			name="nom" id="nom">
 		<button>Créer</button>
 	</form>
 	<h2>La liste des contacts de la BDD est:</h2>
@@ -28,6 +28,8 @@
 				<td>${contact.civilite }</td>
 				<td>${contact.prenom }</td>
 				<td>${contact.nom }</td>
+				<td>${contact.image }</td>
+
 				<td>
 					<form action="ShowAdressesServlet" method="get">
 						<input type="hidden" value="${contact.id}" name="id" id="id">
@@ -49,7 +51,8 @@
 			</tr>
 			<tr>
 				<c:forEach items="${contact.adresses}" var="adresse">
-					<td colspan="4">${adresse.rue }  à  ${adresse.ville } (${adresse.codePostal }, ${adresse.pays })</td>
+					<td colspan="4">${adresse.rue }à ${adresse.ville }
+						(${adresse.codePostal }, ${adresse.pays })</td>
 				</c:forEach>
 			</tr>
 		</c:forEach>

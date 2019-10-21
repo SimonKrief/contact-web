@@ -15,7 +15,7 @@
 		driverClassName='com.mysql.jdbc.Driver'
 		url='jdbc:mysql://localhost:3306/contacts?serverTimezone=UTC'
 		username='root'
-		password='P@ssw0rd'
+		password='aaaa'
 		maxActive='20'
 		maxIdle='10'
 		maxWait='600000'

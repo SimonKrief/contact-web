@@ -25,16 +25,21 @@ public class EditContactServlet extends HttpServlet {
 		//Contact contact=request.getParameter("contact");
 		String newNom=request.getParameter("nom");
 		String newPrenom=request.getParameter("prenom");
+//		String image = request.getParameter("image");
 		Civilite civilite= Civilite.valueOf(request.getParameter("civilite"));		
+
 		long id = Long.parseLong(request.getParameter("id"));
 		Contact contact=service.getContactById(id);
 		
 		contact.setNom(newNom);
 		contact.setPrenom(newPrenom);
 		contact.setCivilite(civilite);
+//		contact.setImage(image);
 		service.modifyContact(contact);
+
 		String message="Félicitations, le contact a été modifié";
 		request.setAttribute("message", message);
+
 		String page;
 		page="/index.jsp";
 		RequestDispatcher rd=getServletContext().getRequestDispatcher(page);
